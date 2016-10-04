@@ -1,0 +1,102 @@
+/*************** General ****************/
+body{
+	padding: 30px 50px; 
+}
+
+.row{
+	margin: 0;
+}
+
+.hidden{
+	display: none;
+}
+
+.clearfix{
+	content: '';
+	clear: both;
+}
+
+/*************** Chat Messages ****************/
+.chat{
+	padding: 20px 0;
+}
+
+.chat__message{ 
+	margin-bottom: 10px; 
+	list-style: none;
+	width: 100%; 
+}
+
+.message--outbound .message__author{
+	text-align: right;
+}
+
+.message--outbound .message__content{
+	float: right;
+}
+
+.message--outbound .message__date{
+	clear: both;
+	text-align: right;
+}
+
+.editmessage__icon{
+	float: right;
+	font-size: 20px; 
+	padding: 7px 7px 0 0;
+}
+
+.message__author{
+	margin: 0; 
+	display: block;
+	color: rgb(171, 183, 183);
+}
+
+.message__content{
+	display: inline-block;
+	max-width: 80%; 
+	padding: 10px; 
+	margin: 0;
+	background-color: rgb(92, 151, 191); 
+	color: white;
+	font-weight: bold;
+	overflow-wrap: break-word;
+	border-radius: 10px; 
+}
+
+.message__content:focus{
+	outline: none;
+	background-color: rgb(27, 45, 57); 
+}
+
+.message__date{
+	display: block;
+	font-size: 0.85em;
+	color: rgb(171, 183, 183);
+	margin: 0;
+}
+
+/*************** Chat Form ****************/
+.sendForm{
+	border: 1px solid #CCC;
+	border-radius: 4px;
+}
+
+.sendForm__author{
+	width: 25%;
+	float: left;
+}
+
+.sendForm .input-group{
+	overflow: hidden;	
+}
+
+.sendForm__submit{
+	border: none;
+}
+
+[class*="sendForm__"]:not(.sendForm__submit){
+	border: none;
+	border-radius: 0;
+	border-right: 1px solid #CCC;
+}

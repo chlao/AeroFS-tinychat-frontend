@@ -1,0 +1,51 @@
+== tinychat backend ==
+
+/fixtures/fakedata.json contains an example of the JSON data that will be sent to the clientside.
+The data looks like this where the last-edited field may or may not be present.
+{
+    messages: [
+        {
+            id: 1, 
+            author: "", 
+            timestamp: 1421953648024, 
+            content: "",
+            last-edited: 1421953648024,
+            type: "outbound"
+        }, 
+        ...
+    ], 
+    last_seen: 1421953648024
+}
+
+The requests for the backend routes are made in /js/chatmessage/dataService.js. 
+
+Backend related code are commented with the keyword BACK_TODO.
+Code marked with BACK_TODO may need to be removed or deleted once the backend routes are supported. 
+Act accordingly to the comments written alongside the BACK_TODO keyword.
+
+=== Requirements ===
+
+The following routes should be supported:
+* Read
+    url: '/messages'
+    method: GET
+    Return the chat messages data (JSON) following the same structure as /fixtures/fakedata.json
+
+* Create
+    url: '/messages'
+    method: POST
+    Receive the message (JSON) data to save to the database 
+        {
+            author: "", 
+            timestamp: 1421953648024, 
+            content: "",
+            type: "inbound"
+        }
+    Return the id of message in the database 
+        {id: 1}
+
+* Update
+    url: '/messages/{id}'
+    method: POST
+    Receive the updated message text for the the message with the id obtained from the URL 
+        {contents: ""}
